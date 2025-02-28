@@ -1,0 +1,41 @@
+<div class="upload-container">
+    <div class="resume-section">
+      <h2>Upload Your Resume</h2>
+      <div class="file-upload">
+        <input type="file" id="resume" (change)="onFileSelected($event)" accept=".pdf,.doc,.docx" hidden>
+        <label for="resume" class="upload-button">
+          <i class="fas fa-cloud-upload-alt"></i>
+          {{ fileName || 'Choose File' }}
+        </label>
+      </div>
+    </div>
+  
+    <div class="details-section">
+      <h2>Basic Details</h2>
+      <form [formGroup]="form">
+        <div class="form-group">
+          <input type="text" formControlName="name" placeholder="Full Name">
+        </div>
+        <div class="form-group">
+          <input type="email" formControlName="email" placeholder="Email Address">
+        </div>
+        <div class="form-group">
+          <input type="tel" formControlName="phone" placeholder="Phone Number">
+        </div>
+      </form>
+    </div>
+  
+    <div class="option-buttons">
+      <button [class.active]="selectedOption === 'FT'" (click)="selectOption('FT')">
+        Full Time Position
+      </button>
+      <button [class.active]="selectedOption === 'INTERN'" (click)="selectOption('INTERN')">
+        Internship
+      </button>
+    </div>
+  
+    <div class="form-container" *ngIf="selectedOption">
+      <app-ft-form *ngIf="selectedOption === 'FT'"></app-ft-form>
+      <app-intern-form *ngIf="selectedOption === 'INTERN'"></app-intern-form>
+    </div>
+  </div>

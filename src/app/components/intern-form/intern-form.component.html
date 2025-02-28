@@ -1,0 +1,43 @@
+<div class="form-wrapper">
+    <h3>Internship Details</h3>
+    <form [formGroup]="internForm" (ngSubmit)="onSubmit()">
+      <div class="form-grid">
+        <div class="form-group">
+          <label>University/College</label>
+          <input type="text" formControlName="university" placeholder="Enter your university name">
+        </div>
+  
+        <div class="form-group">
+          <label>Course</label>
+          <input type="text" formControlName="course" placeholder="Enter your course">
+        </div>
+  
+        <div class="form-group">
+          <label>Graduation Year</label>
+          <input type="number" formControlName="graduationYear" placeholder="Enter graduation year">
+        </div>
+  
+        <div class="form-group">
+          <label>Available From</label>
+          <input type="date" formControlName="availableFrom">
+        </div>
+  
+        <div class="form-group">
+          <label>Internship Duration (months)</label>
+          <input type="number" formControlName="internshipDuration" placeholder="Enter duration in months">
+        </div>
+  
+        <div class="form-group">
+          <label>Expected Stipend (monthly)</label>
+          <input type="number" formControlName="stipendExpectation" placeholder="Enter expected stipend">
+        </div>
+  
+        <div class="form-group full-width">
+          <label>Relevant Projects</label>
+          <textarea formControlName="relevantProjects" placeholder="Describe your relevant projects"></textarea>
+        </div>
+      </div>
+  
+      <button type="submit" class="submit-btn">Submit Application</button>
+    </form>
+  </div>

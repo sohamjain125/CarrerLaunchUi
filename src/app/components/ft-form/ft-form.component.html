@@ -1,0 +1,38 @@
+<div class="form-wrapper">
+    <h3>Full Time Position Details</h3>
+    <form [formGroup]="ftForm" (ngSubmit)="onSubmit()">
+      <div class="form-grid">
+        <div class="form-group">
+          <label>Expected Salary (Annual)</label>
+          <input type="number" formControlName="expectedSalary" placeholder="Enter expected salary">
+        </div>
+  
+        <div class="form-group">
+          <label>Years of Experience</label>
+          <input type="number" formControlName="yearsOfExperience" placeholder="Enter years of experience">
+        </div>
+  
+        <div class="form-group">
+          <label>Notice Period (in days)</label>
+          <input type="number" formControlName="noticePeriod" placeholder="Enter notice period">
+        </div>
+  
+        <div class="form-group">
+          <label>Preferred Location</label>
+          <input type="text" formControlName="preferredLocation" placeholder="Enter preferred location">
+        </div>
+  
+        <div class="form-group">
+          <label>Current Company (if any)</label>
+          <input type="text" formControlName="currentCompany" placeholder="Enter current company">
+        </div>
+  
+        <div class="form-group">
+          <label>Key Skills</label>
+          <textarea formControlName="skills" placeholder="Enter your key skills (comma-separated)"></textarea>
+        </div>
+      </div>
+  
+      <button type="submit" class="submit-btn">Submit Application</button>
+    </form>
+  </div>

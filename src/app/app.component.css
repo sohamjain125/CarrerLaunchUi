@@ -1,0 +1,37 @@
+.main-container {
+    min-height: 100vh;
+    background: #0F172A;
+    background-image: 
+      radial-gradient(at 40% 20%, hsla(28,100%,74%,0.1) 0px, transparent 50%),
+      radial-gradient(at 80% 0%, hsla(189,100%,56%,0.1) 0px, transparent 50%),
+      radial-gradient(at 0% 50%, hsla(355,100%,93%,0.1) 0px, transparent 50%);
+    color: #E2E8F0;
+    padding: 20px;
+  }
+  
+  header {
+    text-align: center;
+    padding: 40px 0;
+  }
+  
+  header h1 {
+    font-size: 3.5em;
+    margin: 0;
+    font-weight: 800;
+    background: linear-gradient(135deg, #60A5FA, #A78BFA);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: -1px;
+  }
+  
+  header p {
+    font-size: 1.2em;
+    color: #94A3B8;
+    margin-top: 10px;
+  }
+  
+  .content {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+  }
