@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-resume-upload',
@@ -8,14 +9,16 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 })
 export class ResumeUploadComponent {
   form: FormGroup;
-  selectedOption: 'FT' | 'INTERN' | null = null;
   fileName: string = '';
 
-  constructor(private fb: FormBuilder) {
+  constructor(
+    private fb: FormBuilder,
+    private router: Router
+  ) {
     this.form = this.fb.group({
-      name: [''],
-      email: [''],
-      phone: ['']
+      name: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      phone: ['', Validators.required]
     });
   }
 
@@ -26,7 +29,19 @@ export class ResumeUploadComponent {
     }
   }
 
-  selectOption(option: 'FT' | 'INTERN') {
-    this.selectedOption = option;
+  navigateToForm(type: 'FT' | 'INTERN') {
+    console.log('Navigating to:', type); // Debug log
+    
+    // Store form data regardless of validation for testing
+    localStorage.setItem('basicDetails', JSON.stringify({
+      ...this.form.value,
+      resume: this.fileName
+    }));
+
+    if (type === 'FT') {
+      this.router.navigate(['/ft-application']);
+    } else {
+      this.router.navigate(['/intern-application']);
+    }
   }
 }

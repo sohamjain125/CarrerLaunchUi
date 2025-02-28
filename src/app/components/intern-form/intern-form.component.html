@@ -1,5 +1,11 @@
 <div class="form-wrapper">
-    <h3>Internship Details</h3>
+    <div class="form-header">
+        <button class="back-btn" (click)="goBack()">
+          <i class="fas fa-arrow-left"></i> Back
+        </button>
+       
+      </div>
+      <h3>Internship Details</h3>
     <form [formGroup]="internForm" (ngSubmit)="onSubmit()">
       <div class="form-grid">
         <div class="form-group">

@@ -118,3 +118,35 @@
       padding: 20px;
     }
   }
+
+.form-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.back-btn {
+  background: none;
+  border: none;
+  color: #94A3B8;
+  font-size: 1em;
+  cursor: pointer;
+  padding: 8px 16px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-right: 20px;
+  transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+  background: rgba(148, 163, 184, 0.1);
+  color: #F1F5F9;
+}
+
+.error-message {
+  color: #EF4444;
+  font-size: 0.85em;
+  margin-top: 6px;
+}

@@ -8,6 +8,7 @@ import { FtFormComponent } from './components/ft-form/ft-form.component';
 import { InternFormComponent } from './components/intern-form/intern-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+
 @NgModule({
   declarations: [
     AppComponent,
